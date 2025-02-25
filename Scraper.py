@@ -192,22 +192,26 @@ def get_all_data(dict):
             dict[title][4] = "No Data"
 
 
-
-
-
     return dict
 
 
-# actual calls made below
+# testing fascilitation - remove later
+go = True
+while go:
+    try:
+        # actual calls made below
 
-# update with path to the CSV
+        # update with path to the CSV
 
-# create dictionary from csv
-originaal_dictionary = csv_to_dict(r"C:\Users\dawso\OneDrive\Desktop\Web Scraper V1\gameInfo.csv")
+        # create dictionary from csv
+        original_dictionary = csv_to_dict(r"C:\Users\dawso\OneDrive\Desktop\Web Scraper V1\example.csv")
+        go = False
+    except:
+        go = True
 
 # make call to scraper
-return_dictionary = get_all_data(originaal_dictionary)
+return_dictionary = get_all_data(original_dictionary)
 
 # update with path to csv
 # write to file
-dict_to_csv(r"C:\Users\dawso\OneDrive\Desktop\Web Scraper V1\gameInfo.csv", return_dictionary)
+dict_to_csv(r"C:\Users\dawso\OneDrive\Desktop\Web Scraper V1\example-ready.csv", return_dictionary)
